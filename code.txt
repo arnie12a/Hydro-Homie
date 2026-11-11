@@ -1,0 +1,35 @@
+1. Arduino Nano ESP32 firmware — reads the weight and motion sensors, calculates water consumption, and displays your hydration avatar.
+2. FastAPI backend — receives drinking events over Wi-Fi and stores them in a database.
+3. React website — displays hydration statistics, interactive graphs, and historical drinking patterns.
+
+
+HydrationHomie/
+│
+├── firmware/
+│   ├── handles all the reading from the hydration homie with esp32
+│
+├── backend/
+│   ├── stores all the data into a database
+│
+└── frontend/
+    ├── visualizes the drinking habits through the hydration homie
+
+
+
+
+
+Arduino will capture drinking events like this
+{
+  "device_id": "hydration-homie-01",
+  "event_id": "drink-000123",
+  "amount_ml": 125,
+  "remaining_ml": 375
+}
+
+Recording the data using the backend
+The backend should timestamp events, validate their values, and avoid recording duplicate event IDs if the Arduino retries a failed request.
+The Arduino should also buffer unsent events when Wi-Fi is unavailable.
+
+
+
+Drinking detection:
