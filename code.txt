@@ -33,3 +33,4 @@ The Arduino should also buffer unsent events when Wi-Fi is unavailable.
 
 
 Drinking detection:
+- Going to get some training data for the gyroscope and accelerometer to detect the different movements of the water bottle. So that would mean getting measurements when water is being drank, when water is at standstill, 
